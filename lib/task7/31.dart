@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
-class project2 extends StatelessWidget {
+class project2 extends StatefulWidget {
   const project2({super.key});
+
+  @override
+  State<project2> createState() => _project2State();
+}
+
+class _project2State extends State<project2> {
+  int value = 1;
+
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +53,12 @@ class project2 extends StatelessWidget {
                         child: Row(
                           children: [
                             InkWell(
-                              onTap: (){},
+                              onTap: (){
+                                value--;
+                                setState(() {
+
+                                });
+                              },
                               child: Card(
                                 color: Color(0xffe2dcd7),
                                 elevation: 6.0,
@@ -66,7 +80,7 @@ class project2 extends StatelessWidget {
                             SizedBox(
                               width: 5,
                             ),
-                            Text('01',
+                            Text(value.toString(),
                               style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 20,
@@ -76,7 +90,13 @@ class project2 extends StatelessWidget {
                               width: 5,
                             ),
                             InkWell(
-                              onTap: (){},
+                              onTap: (){
+                                value++;
+                                setState(() {
+
+                                });
+                                ;
+                              },
                               child: Card(
                                 color: Color(0xffcd461d),
                                 elevation: 6.0,
@@ -111,6 +131,7 @@ class project2 extends StatelessWidget {
                   ),
                 ),
                 Container(
+
                    decoration: BoxDecoration(
                      color: Colors.white,
                    ),
@@ -307,11 +328,14 @@ class project2 extends StatelessWidget {
                         ),
                           onPressed: (){},
                           child: Text('On To Card')),
+
                     ],
                   ),
-                )
+                ),
+                Lottie.asset('assets/animation/animation_lks5at14.json'),
               ],
             ),
+
           ),
         ),
       ),

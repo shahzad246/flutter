@@ -1,13 +1,37 @@
 
+import 'package:astask/1tuseday.dart';
+import 'package:astask/Nutrition/Nutrition_home.dart';
 import 'package:astask/sample.dart';
 import 'package:astask/task.dart';
 import 'package:astask/task7/31.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 
 void main() {
-  runApp(const project2());
+  runApp(const splashscreen());
 }
+
+class splashscreen extends StatelessWidget {
+  const splashscreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: AnimatedSplashScreen(
+          splash: 'assets/images/Herb.png',
+          nextScreen: task(),
+          splashTransition: SplashTransition.scaleTransition,
+
+        ),
+      ),
+    );
+  }
+}
+
+
+
 
 
 class Home extends StatelessWidget {
